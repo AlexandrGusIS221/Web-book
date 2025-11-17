@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FullStack Evolution</title>
+
+    <!-- Иконка -->
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script type="module" src="/js/game.js" defer></script>
+
+    <!-- Не стал выделять отдельный файл для стилей так как их мало!-->
+    <style>
+      .tech-logo {
+        transition: transform 0.05s ease;
+      }
+      
+      .tech-logo:hover {
+        transform: scale(1.05);
+      }
+      
+      .tech-logo:active {
+        transform: scale(0.95);
+      }
+      
+      .upgrade-item, .tech-item {
+        transition: all 0.3s ease;
+      }
+      
+      .upgrade-item:hover, .tech-item:hover {
+        border-color: #0d6efd !important;
+      }
+    </style>
+</head>
+<body class="bg-light user-select-none vh-100">
+  <header class="d-flex bg-primary py-2 position-sticky top-0 w-100 z-3">
+    <!-- Кнопка скрытия левого сайдбара-->
+    <button class="btn btn-outline-secondary border-0" 
+      onclick="toggleSidebar('left-sidebar')">
+      <i class="bi bi-layout-sidebar-inset text-white"></i>
+    </button>
+
+    <div class="container-fluid d-flex align-items-center justify-content-between px-4 text-white flex-column flex-md-row">
+      <!-- Лого и переключатель темы -->
+      <div class="d-flex align-items-center">
+        <i id="themeToggle" class="bi bi-code-slash fs-3" role="button"></i>
+        <a href="/" class="navbar-brand fs-4 ms-3 fw-bold">Fullstack Evolution</a>
+      </div>
+      <!-- Должность, уровень и PX -->
+      <div class="d-flex align-items-center gap-4">
+        <div class="text-end">
+          <div class="fw-bold fs-6" id="careerLevel">Junior Frontend Developer</div>
+          <div class="d-flex align-items-center gap-2">
+            <span>Уровень: <strong id="level">1</strong></span>
+            <span class="px-2 py-1 bg-success rounded">
+              <i class="bi bi-coin"></i> <strong id="pixelCount">0</strong> PX
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Кнопка скрытия правого сайдбара-->
+    <button class="btn btn-outline-secondary border-0" 
+      onclick="toggleSidebar('right-sidebar')">
+      <i class="bi bi-layout-sidebar-inset-reverse text-white"></i>
+    </button>
+  </header>
+
+  <main class="container-fluid my-3 row g-3">
+    <aside id="left-sidebar" class="d-block col-lg">
+      <section class="card h-100">
+        <header class="card-header bg-warning text-dark">
+          <h2 class="h5 mb-0"><i class="bi bi-tools" aria-hidden="true"></i> Прокачка скиллов</h2>
+        </header>
+        <div class="card-body">
+          <section class="mb-4">
+            <h3 class="h6 text-primary">🚀 Бусты опыта</h3>
+            <ul class="list-unstyled">
+              <li class="upgrade-item mb-2 p-2 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">Семантические теги</strong>
+                    <div class="text-muted">+1 PX/клик</div>
+                  </div>
+                  <button class="btn btn-sm btn-success">50 PX</button>
+                </div>
+              </li>
+              <li class="upgrade-item mb-2 p-2 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">CSS Анимации</strong>
+                    <div class="text-muted">2 PX/сек</div>
+                  </div>
+                  <button class="btn btn-sm btn-success">200 PX</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="h6 text-success">📈 Множители</h3>
+            <ul class="list-unstyled">
+              <li class="upgrade-item mb-2 p-2 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">Качество кода</strong>
+                    <div class="text-muted">×1.5 ко всему</div>
+                  </div>
+                  <button class="btn btn-sm btn-success">1,000 PX</button>
+                </div>
+              </li>
+              <li class="upgrade-item mb-2 p-2 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">Оптимизация</strong>
+                    <div class="text-muted">×2 ко всему</div>
+                  </div>
+                  <button class="btn btn-sm btn-success">5,000 PX</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </aside>
+
+    <section id="content" class="col-lg-5">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <div class="row mb-4">
+            <div class="col-6">
+              <div class="card bg-primary text-white">
+                <div class="card-body py-3">
+                  <h3 class="h6 card-title mb-1">PX/клик</h3>
+                  <p class="h4 mb-0" id="clickPower">1</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card bg-info text-white">
+                <div class="card-body py-3">
+                  <h3 class="h6 card-title mb-1">PX/сек</h3>
+                  <p class="h4 mb-0" id="passiveIncome">0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <h1>Логику потом доделаю!</h1>
+
+          <div class="mb-4">
+            <button class="tech-logo bg-danger text-white rounded-3 p-5 mx-auto border-0"
+                    id="htmlClicker">
+              <i class="bi bi-code-slash display-1" aria-hidden="true"></i>
+              <h3 class="mt-3">HTML</h3>
+              <span>Кликай для опыта!</span>
+            </button>
+          </div>
+
+          <div class="alert alert-secondary">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            "Каждый клик - это новый тег, каждый тег - шаг к успешной карьере!"
+          </div>
+          <div class="alert alert-secondary">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            Нажмите на <i class="bi bi-code-slash" aria-hidden="true"></i>
+            в шапке сайта чтобы переключить тему!
+          </div>
+        </div>
+        <button id="resetGame" class="btn btn-danger">Сбросить игру?</button>
+      </div>
+    </section>
+
+    <aside id="right-sidebar" class="col-lg">
+      <section class="card h-100">
+        <header class="card-header bg-info text-white">
+          <h2 class="h5 mb-0"><i class="bi bi-briefcase" aria-hidden="true"></i> Карьерный рост</h2>
+        </header>
+        <div class="card-body">
+          <section class="mb-3">
+            <h3 class="h6 text-primary">🎨 Фронтенд</h3>
+            <ul class="list-unstyled">
+              <li class="tech-item mb-2 p-2 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">CSS3</strong>
+                    <div class="text-muted">Стилизация</div>
+                  </div>
+                  <button class="btn btn-sm btn-primary">500 PX</button>
+                </div>
+              </li>
+              <li class="tech-item mb-2 p-2 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">JavaScript</strong>
+                    <div class="text-muted">Логика</div>
+                  </div>
+                  <button class="btn btn-sm btn-primary">2,000 PX</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="mb-3">
+            <h3 class="h6 text-success">⚡ Фреймворки</h3>
+            <ul class="list-unstyled">
+              <li class="tech-item mb-2 p-2 border rounded opacity-50">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">React</strong>
+                    <div class="text-muted">Современный</div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" disabled>10,000 PX</button>
+                </div>
+              </li>
+              <li class="tech-item mb-2 p-2 border rounded opacity-50">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">Vue.js</strong>
+                    <div class="text-muted">Прогрессивный</div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" disabled>8,000 PX</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="h6 text-warning">🖥️ Бэкенд</h3>
+            <ul class="list-unstyled">
+              <li class="tech-item mb-2 p-2 border rounded opacity-50">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">Node.js</strong>
+                    <div class="text-muted">Серверный JS</div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" disabled>15,000 PX</button>
+                </div>
+              </li>
+              <li class="tech-item mb-2 p-2 border rounded opacity-50">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong class="fw-bold">Базы данных</strong>
+                    <div class="text-muted">MongoDB, SQL</div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" disabled>25,000 PX</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </aside>
+  </main> 
+
+  <footer class="bg-dark text-white mt-4 py-3 position-sticky bottom-0 w-100 z-3">
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col-6 col-sm">
+          <small>Всего кликов</small>
+          <div class="h5" id="totalClicks">0</div>
+        </div>
+        <div class="col-6 col-sm">
+          <small>Заработано</small>
+          <div class="h5" id="totalEarned">0 PX</div>
+        </div>
+        <div class="col-6 col-sm">
+          <small>Время в игре</small>
+          <div class="h5" id="playTime">0:00</div>
+        </div>
+        <div class="col-6 col-sm">
+          <small>Уровень</small>
+          <div class="h5" id="currentLevel">1</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

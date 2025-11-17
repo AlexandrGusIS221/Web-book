@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Веб-шпаргалка</title>
+ 
+  <!-- Иконка -->
+  <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+
+  <!-- Шрифт -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500..700;1,500..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a id="toggleTheme" href="#" class="header__logo logo">
+        <img src="/assets/icons/logo.svg" alt="Логотип Веб-шпаргалка">
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#HTML" class="nav__link link">HTML</a></li>
+          <li class="nav__item"><a href="#CSS" class="nav__link link">CSS</a></li>
+          <li class="nav__item"><a href="#JS" class="nav__link link">JS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="section hero">
+      <div class="container">
+        <h1 class="hero__title title">HTML, CSS, JS. <br> Быстрый доступ к основам.</h1>
+        <p class="hero__text text">
+          Собранные в одном месте самые необходимые справочные материалы, теги, свойства и функции для фронтенд-разработки.
+        </p>
+        <div class="hero__actions">
+            <a href="#HTML" class="hero__link link"><img width="40" src="/assets/icons/HTML.svg" alt="HTML иконка"></a>
+            <a href="#CSS" class="hero__link link"><img width="40" src="/assets/icons/CSS.svg" alt="CSS иконка"></a>
+            <a href="#JS" class="hero__link link"><img width="40" src="/assets/icons/JS.svg" alt="JS иконка"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция HTML -->
+    <section id="HTML" class="section section_html">
+      <div class="container">
+        <h2 class="section__title title">HTML справочник</h2>
+        <div class="section__content">
+          <ul class="cards">
+            <li>
+              <article class="card">
+                <h3 class="card__title">Основные термины</h3>
+                <ul class="card__list">
+                  <li class="card__item"><strong>Семантическая верстка</strong> - использование HTML-тегов согласно их смысловому назначению для улучшения доступности и SEO</li>
+                  <li class="card__item"><strong>DOM</strong> - объектная модель документа, древовидная структура HTML-элементов</li>
+                  <li class="card__item"><strong>Атрибуты</strong> - дополнительные свойства HTML-элементов (id, class, src, href и др.)</li>
+                  <li class="card__item"><strong>Валидация</strong> - проверка HTML-кода на соответствие стандартам W3C</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Основные теги</h3>
+                <ul class="card__list">
+                  <li class="card__item">&lt;div&gt; - блочный контейнер для группировки элементов</li>
+                  <li class="card__item">&lt;span&gt; - строчный контейнер для текста</li>
+                  <li class="card__item">&lt;p&gt; - параграф текста</li>
+                  <li class="card__item">&lt;a&gt; - гиперссылка для навигации</li>
+                  <li class="card__item">&lt;img&gt; - вставка изображения на страницу</li>
+                  <li class="card__item">&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; - неупорядоченные и упорядоченные списки</li>
+                  <li class="card__item">&lt;h1&gt;-&lt;h6&gt; - заголовки разного уровня</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Семантические теги</h3>
+                <ul class="card__list">
+                  <li class="card__item">&lt;header&gt; - шапка сайта или раздела</li>
+                  <li class="card__item">&lt;main&gt; - основное содержимое страницы</li>
+                  <li class="card__item">&lt;footer&gt; - подвал сайта или раздела</li>
+                  <li class="card__item">&lt;section&gt; - логическая секция контента</li>
+                  <li class="card__item">&lt;article&gt; - независимая статья или запись</li>
+                  <li class="card__item">&lt;aside&gt; - боковая панель, дополнительный контент</li>
+                  <li class="card__item">&lt;nav&gt; - навигационное меню по сайту</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Формы</h3>
+                <ul class="card__list">
+                  <li class="card__item">&lt;form&gt; - контейнер для элементов формы</li>
+                  <li class="card__item">&lt;input&gt; - поле ввода различных типов</li>
+                  <li class="card__item">&lt;textarea&gt; - многострочное текстовое поле</li>
+                  <li class="card__item">&lt;button&gt; - кнопка для действий</li>
+                  <li class="card__item">&lt;select&gt; - выпадающий список вариантов</li>
+                  <li class="card__item">&lt;label&gt; - метка для элементов формы</li>
+                  <li class="card__item">&lt;fieldset&gt; - группа связанных полей формы</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Мета-теги</h3>
+                <ul class="card__list">
+                  <li class="card__item">&lt;title&gt; - заголовок страницы во вкладке браузера</li>
+                  <li class="card__item">&lt;meta charset="UTF-8"&gt; - кодировка документа</li>
+                  <li class="card__item">&lt;meta name="viewport"&gt; - адаптивность для мобильных</li>
+                  <li class="card__item">&lt;meta name="description"&gt; - описание для поисковиков</li>
+                  <li class="card__item">&lt;link rel="stylesheet"&gt; - подключение CSS стилей</li>
+                  <li class="card__item">&lt;script&gt; - подключение или вставка JavaScript кода</li>
+                </ul>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция CSS -->
+    <section id="CSS" class="section section_css">
+      <div class="container">
+        <h2 class="section__title title">CSS справочник</h2>
+        <div class="section__content">
+          <ul class="cards">
+            <li>
+              <article class="card">
+                <h3 class="card__title">Основные термины</h3>
+                <ul class="card__list">
+                  <li class="card__item"><strong>Специфичность</strong> - правило определения того, какой CSS-стиль будет применен к элементу</li>
+                  <li class="card__item"><strong>Каскадность</strong> - механизм объединения нескольких CSS-правил для одного элемента</li>
+                  <li class="card__item"><strong>Блочная модель</strong> - концепция, описывающая расположение content, padding, border и margin</li>
+                  <li class="card__item"><strong>Адаптивный дизайн</strong> - подход создания сайтов для разных устройств и экранов</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Основные свойства</h3>
+                <ul class="card__list">
+                  <li class="card__item">color - цвет текста элемента</li>
+                  <li class="card__item">font-size - размер шрифта текста</li>
+                  <li class="card__item">margin - внешние отступы вокруг элемента</li>
+                  <li class="card__item">padding - внутренние отступы внутри элемента</li>
+                  <li class="card__item">background - фон элемента (цвет, изображение)</li>
+                  <li class="card__item">border - граница вокруг элемента</li>
+                  <li class="card__item">width/height - ширина и высота элемента</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Flexbox</h3>
+                <ul class="card__list">
+                  <li class="card__item">display: flex - активация flex-контейнера</li>
+                  <li class="card__item">justify-content - выравнивание по главной оси</li>
+                  <li class="card__item">align-items - выравнивание по поперечной оси</li>
+                  <li class="card__item">flex-direction - направление главной оси</li>
+                  <li class="card__item">flex-wrap - перенос элементов на новую строку</li>
+                  <li class="card__item">flex-grow - коэффициент растяжения элемента</li>
+                  <li class="card__item">flex-shrink - коэффициент сжатия элемента</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Grid</h3>
+                <ul class="card__list">
+                  <li class="card__item">display: grid - активация grid-контейнера</li>
+                  <li class="card__item">grid-template-columns - определение колонок</li>
+                  <li class="card__item">grid-template-rows - определение строк</li>
+                  <li class="card__item">grid-gap - расстояние между grid-элементами</li>
+                  <li class="card__item">grid-area - размещение элемента в grid-области</li>
+                  <li class="card__item">grid-template-areas - именованные grid-области</li>
+                  <li class="card__item">align-content - выравнивание всего grid-контейнера</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Анимации</h3>
+                <ul class="card__list">
+                  <li class="card__item">transition - плавные переходы между состояниями</li>
+                  <li class="card__item">transform - трансформации (сдвиг, поворот, масштаб)</li>
+                  <li class="card__item">@keyframes - определение ключевых кадров анимации</li>
+                  <li class="card__item">animation-name - название анимации</li>
+                  <li class="card__item">animation-duration - продолжительность анимации</li>
+                  <li class="card__item">animation-timing-function - функция скорости анимации</li>
+                  <li class="card__item">animation-iteration-count - количество повторений</li>
+                </ul>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция JS -->
+    <section id="JS" class="section section_js">
+      <div class="container">
+        <h2 class="section__title title">JavaScript справочник</h2>
+        <div class="section__content">
+          <ul class="cards">
+            <li>
+              <article class="card">
+                <h3 class="card__title">Основные термины</h3>
+                <ul class="card__list">
+                  <li class="card__item"><strong>Event Loop</strong> - механизм выполнения асинхронного кода в JavaScript</li>
+                  <li class="card__item"><strong>Hoisting</strong> - поднятие переменных и функций в начало области видимости</li>
+                  <li class="card__item"><strong>Closure</strong> - замыкание, функция вместе с лексическим окружением</li>
+                  <li class="card__item"><strong>Promise</strong> - объект для работы с асинхронными операциями</li>
+                  <li class="card__item"><strong>Callback</strong> - функция, передаваемая как аргумент в другую функцию</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">DOM методы</h3>
+                <ul class="card__list">
+                  <li class="card__item">querySelector() - поиск элемента по CSS селектору</li>
+                  <li class="card__item">addEventListener() - добавление обработчика события</li>
+                  <li class="card__item">getElementById() - поиск элемента по ID</li>
+                  <li class="card__item">classList.add() - добавление класса элементу</li>
+                  <li class="card__item">classList.remove() - удаление класса у элемента</li>
+                  <li class="card__item">setAttribute() - установка атрибута элементу</li>
+                  <li class="card__item">getAttribute() - получение значения атрибута</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Массивы</h3>
+                <ul class="card__list">
+                  <li class="card__item">push() - добавление элемента в конец массива</li>
+                  <li class="card__item">pop() - удаление последнего элемента массива</li>
+                  <li class="card__item">forEach() - перебор всех элементов массива</li>
+                  <li class="card__item">map() - создание нового массива на основе существующего</li>
+                  <li class="card__item">filter() - фильтрация элементов массива по условию</li>
+                  <li class="card__item">find() - поиск первого элемента по условию</li>
+                  <li class="card__item">reduce() - аккумулятор для преобразования массива в значение</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Объекты</h3>
+                <ul class="card__list">
+                  <li class="card__item">Object.keys() - получение массива ключей объекта</li>
+                  <li class="card__item">Object.values() - получение массива значений объекта</li>
+                  <li class="card__item">JSON.parse() - преобразование JSON строки в объект</li>
+                  <li class="card__item">JSON.stringify() - преобразование объекта в JSON строку</li>
+                  <li class="card__item">Object.assign() - копирование свойств между объектами</li>
+                  <li class="card__item">Object.entries() - получение массива пар [ключ, значение]</li>
+                  <li class="card__item">Object.freeze() - заморозка объекта от изменений</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h3 class="card__title">Функции</h3>
+                <ul class="card__list">
+                  <li class="card__item">function declaration - объявление именованной функции</li>
+                  <li class="card__item">arrow functions - стрелочные функции с укороченным синтаксисом</li>
+                  <li class="card__item">setTimeout() - выполнение функции с задержкой</li>
+                  <li class="card__item">setInterval() - повторное выполнение функции с интервалом</li>
+                  <li class="card__item">Promise - объект для асинхронных операций</li>
+                  <li class="card__item">async/await - синтаксис для работы с асинхронным кодом</li>
+                  <li class="card__item">try/catch - обработка ошибок в коде</li>
+                </ul>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__info">
+          <h3 class="footer__title">Веб-шпаргалка</h3>
+          <p class="footer__text">Быстрый доступ к основам веб-разработки</p>
+          <div class="footer__social">
+            <a href="https://github.com/AlexandrGusIS221/Web-book.git" class="footer__social-link">
+              <img src="/assets/icons/github.svg" alt="GitHub" width="48">
+            </a>
+            <a href="https://t.me/GusAlex2006" class="footer__social-link">
+              <img src="/assets/icons/telegram.svg" alt="Telegram" width="48">
+            </a>
+            <a href="https://vk.com/sasha.gusev2006" class="footer__social-link">
+              <img src="/assets/icons/vk.svg" alt="VK" width="48">
+            </a>
+          </div>
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#HTML" class="footer__link link">HTML</a></li>
+            <li class="footer__item"><a href="#CSS" class="footer__link link">CSS</a></li>
+            <li class="footer__item"><a href="#JS" class="footer__link link">JavaScript</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__copyright">
+        <p class="footer__copyright-text">&copy; 2025 Веб-шпаргалка. Все права защищены.</p>
+      </div>
+    </div>
+    <button id="secretTrigger" class="secret-trigger">Секретная ссылка(P.S. ТЫ не должен ее видеть)</button>
+    <span>👈Тут ничего нет я отвечаю!🔍</span>
+  </footer>
+
+  <div id="secretModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-step" id="step1">
+        <h3>Устал читать?</h3>
+        <button class="modal-btn" onclick="showNextStep(2)">ДА!</button>
+      </div>
+      
+      <div class="modal-step" id="step2" style="display: none;">
+        <h3>Чувствуешь, что теория - это хорошо, но хочется практики?</h3>
+        <button class="modal-btn" onclick="showNextStep(3)">Конечно!</button>
+      </div>
+      
+      <div class="modal-step" id="step3" style="display: none;">
+        <h3>Стань fullstack-разработчиком... не вставая со стула</h3>
+        <p>Перед тобой симулятор карьеры разработчика (Кликер). Начинаешь с верстки, заканчиваешь архитектором систем.</p>
+        <a href="game.html" class="modal-btn career-btn">Начать карьеру</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
